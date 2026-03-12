@@ -1,6 +1,6 @@
 #include "Player.h"
 #include "DxLib.h"
-#include "Time.h"
+#include "../Library/Time.h"
 
 Player::Player()
 {
@@ -13,7 +13,7 @@ Player::~Player()
 
 void Player::Initlaize()
 {
-    PlayerX = 380;
+    PlayerX = 400;
     PlayerY = 500;
     PlayerW = 40;
     PlayerH = 40;
@@ -24,6 +24,8 @@ void Player::Initlaize()
 
 void Player::Update()
 {
+    moveX = 0.0f;
+
     if (CheckHitKey(KEY_INPUT_A))
     {
         moveX -= 1.0f;
@@ -35,9 +37,13 @@ void Player::Update()
     
     PlayerX += static_cast<int>(moveX * speed * Time::DeltaTime());
 
-    if (PlayerX < 0)
+    if (PlayerX < 250)
     {
-        PlayerX = 0;
+        PlayerX = 250;
+    }
+    if (PlayerX + PlayerW > 1050)
+    {
+        PlayerX = 1050 - PlayerW;
     }
 
 }
