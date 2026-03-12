@@ -26,7 +26,7 @@ void Stage::Draw() const
 
     //地面
     DrawBox(GROUND_LEFT, 0, GROUND_RIGHT, HEIGHT, GetColor(100, 180, 100), TRUE);
-    DrawBox(GROUND_LEFT, 540, GROUND_RIGHT, HEIGHT, GetColor(141, 100, 73), TRUE);
+    DrawBox(GROUND_LEFT, 540, GROUND_RIGHT, HEIGHT, GetColor(140, 105, 70), TRUE);
 
     //右の穴
     DrawBox(GROUND_RIGHT, 0, WIDTH, HEIGHT, GetColor(60, 60, 60), TRUE);
@@ -34,7 +34,9 @@ void Stage::Draw() const
     int footY = player.Bottom();
 
     //プレイヤーの影を取り入れてみる
-    DrawBox(player.Left(), footY, player.Right(), footY + 10, GetColor(125, 125, 125), TRUE);
+    SetDrawBlendMode(DX_BLENDMODE_ALPHA, 120);
+    DrawBox(player.Left(), footY, player.Right(), footY + 10, GetColor(90, 65, 45), TRUE);
+    SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
     //プレイヤー
     player.Draw();
