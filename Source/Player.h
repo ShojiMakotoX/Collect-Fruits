@@ -1,15 +1,17 @@
 #pragma once
 #include "DxLib.h"
 
+class Stage;
+
 class Player
 {
 public:
 	Player();
 	~Player();
 
-	void Initlaize();
-	void Update();
-	void Draw();
+	void Initialize();
+	void Update(const Stage& stage);
+	void Draw() const;
 
 	//“–‚½‚è”»’è—p‚Ì‚â‚Â
 	int Left() const;
@@ -18,8 +20,8 @@ public:
 	int Bottom() const;
 
 private:
-	int PlayerX;
-	int PlayerY;
+	float PlayerX;
+	float PlayerY;
 	int PlayerW;
 	int PlayerH;
 

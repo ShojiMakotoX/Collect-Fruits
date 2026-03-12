@@ -1,6 +1,7 @@
 #pragma once
 #include "../Library/SceneBase.h"
-#include "Player.h"
+#include "Stage.h"
+
 
 /// <summary>
 /// ゲームプレイのシーンを制御する
@@ -14,5 +15,5 @@ public:
 	void Draw() override;
 
 private:
-	Player player;
+	Stage stage;
 };

@@ -1,17 +1,18 @@
 #include "Player.h"
 #include "DxLib.h"
+#include "Stage.h"
 #include "../Library/Time.h"
 
 Player::Player()
 {
-    Initlaize();
+    Initialize();
 }
 
 Player::~Player()
 {
 }
 
-void Player::Initlaize()
+void Player::Initialize()
 {
     PlayerX = 400;
     PlayerY = 500;
@@ -22,7 +23,7 @@ void Player::Initlaize()
 
 }
 
-void Player::Update()
+void Player::Update(const Stage& stage)
 {
     moveX = 0.0f;
 
@@ -37,7 +38,7 @@ void Player::Update()
     
     PlayerX += static_cast<int>(moveX * speed * Time::DeltaTime());
 
-    if (PlayerX < 250)
+    if (PlayerX <250)
     {
         PlayerX = 250;
     }
@@ -48,7 +49,7 @@ void Player::Update()
 
 }
 
-void Player::Draw()
+void Player::Draw() const
 {
     DrawBox(PlayerX, PlayerY, PlayerX + PlayerW, PlayerY + PlayerH, PlayerColor, TRUE);
 }
