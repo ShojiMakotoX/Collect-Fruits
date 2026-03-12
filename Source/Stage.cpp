@@ -25,10 +25,10 @@ void Stage::Draw() const
     //地面
     DrawBox(GROUND_LEFT, 0, GROUND_RIGHT, HEIGHT, GetColor(100, 180, 100), TRUE);
 
-
     //右の穴
     DrawBox(GROUND_RIGHT, 0, WIDTH, HEIGHT, GetColor(60, 60, 60), TRUE);
 
+    //プレイヤー
     player.Draw();
 
 }
