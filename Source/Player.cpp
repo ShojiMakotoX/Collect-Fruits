@@ -21,6 +21,9 @@ void Player::Initialize()
     
     speed = 300.0f;
 
+    StageLeft = 250;
+    StageRight = 1050;
+
 }
 
 void Player::Update(const Stage& stage)
@@ -38,13 +41,13 @@ void Player::Update(const Stage& stage)
     
     PlayerX += static_cast<int>(moveX * speed * Time::DeltaTime());
 
-    if (PlayerX <250)
+    if (PlayerX <StageLeft)
     {
-        PlayerX = 250;
+        PlayerX = StageLeft;
     }
-    if (PlayerX + PlayerW > 1050)
+    if (PlayerX + PlayerW > StageRight)
     {
-        PlayerX = 1050 - PlayerW;
+        PlayerX = 1050 - StageRight;
     }
 
 }

@@ -31,4 +31,7 @@ private:
 	int PlayerColor = GetColor(255, 0, 0);
 
 	float speed;
+
+	int StageLeft;
+	int StageRight;
 };
