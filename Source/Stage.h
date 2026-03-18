@@ -1,5 +1,6 @@
 #pragma once
 #include "Player.h"
+#include "Fruit.h"
 
 class Stage
 {
@@ -28,5 +29,5 @@ public:
 
 private:
 	Player player;
-
+	Fruit fruit{ 400,100 };
 };

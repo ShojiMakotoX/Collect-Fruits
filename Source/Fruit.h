@@ -13,11 +13,12 @@ public:
 
 	bool IsCollected()const;
 	bool CheckHit(const Player& player);
+
 private:
 	int x;
 	int y;
 	int radius = 10;
-	int vy = 0;
+	float vy = 0.0f;
 
 	bool collected = false;
 };

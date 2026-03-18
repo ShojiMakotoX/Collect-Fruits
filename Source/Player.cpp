@@ -41,7 +41,7 @@ void Player::Update(const Stage& stage)
         moveX += 1.0f;
     }
     
-    PlayerX += static_cast<int>(moveX * speed * Time::DeltaTime());
+    PlayerX += moveX * speed * Time::DeltaTime();
     
     //¶‰E‚Ì•Ç‚Ì“–‚½‚è”»’è‚ğ’²®’†
     if (PlayerX <stage.GetLeft())

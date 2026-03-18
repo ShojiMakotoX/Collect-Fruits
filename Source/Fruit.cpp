@@ -23,8 +23,17 @@ void Fruit::Update(const Stage& stage)
     {
         return;
     }
+
+    //Å‘å—Ž‰º‘¬“x
+    const float MAX_FALL_SPEED = 10.0f;
     //d—Í‚ð—^‚¦‚é
-    vy += 1;
+    vy += 0.3f;
+
+    if (vy > MAX_FALL_SPEED)
+    {
+        vy = MAX_FALL_SPEED;
+    }
+
     y += vy;
 
     //’n–Ê‚É“–‚½‚Á‚½‚çŽ~‚ß‚é

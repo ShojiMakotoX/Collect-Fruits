@@ -1,8 +1,10 @@
 #include "PlayScene.h"
 #include "Player.h"
 #include "Stage.h"
+#include "Fruit.h"
 
 PlayScene::PlayScene()
+	:fruit(300,100)
 {
 }
 

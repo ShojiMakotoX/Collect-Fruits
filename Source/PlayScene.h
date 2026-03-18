@@ -1,6 +1,7 @@
 #pragma once
 #include "../Library/SceneBase.h"
 #include "Stage.h"
+#include "Fruit.h"
 
 
 /// <summary>
@@ -16,4 +17,5 @@ public:
 
 private:
 	Stage stage;
+	Fruit fruit;
 };
