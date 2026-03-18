@@ -47,7 +47,7 @@ void Player::Update(const Stage& stage)
     }
     if (PlayerX + PlayerW > StageRight)
     {
-        PlayerX = 1050 - StageRight;
+        PlayerX = StageRight - PlayerW;
     }
 
 }
