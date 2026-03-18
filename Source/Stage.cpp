@@ -1,5 +1,9 @@
 #include "Stage.h"
 #include "DxLib.h"
+/// <summary>
+/// M.Shoji
+/// ゲームの全体を管理するのはここ
+/// </summary>
 
 Stage::Stage()
 {
@@ -26,7 +30,7 @@ void Stage::Draw() const
 
     //地面
     DrawBox(GROUND_LEFT, 0, GROUND_RIGHT, HEIGHT, GetColor(100, 180, 100), TRUE);
-    DrawBox(GROUND_LEFT, 540, GROUND_RIGHT, HEIGHT, GetColor(140, 105, 70), TRUE);
+    DrawBox(GROUND_LEFT, GROUND_Y, GROUND_RIGHT, HEIGHT, GetColor(140, 105, 70), TRUE);
 
     //右の穴
     DrawBox(GROUND_RIGHT, 0, WIDTH, HEIGHT, GetColor(60, 60, 60), TRUE);
@@ -43,7 +47,13 @@ void Stage::Draw() const
 
 }
 
-bool Stage::IsOnGround(int playerX, int playerW) const
+bool Stage::IsOnGround(int playerX,int playerY, int playerW) const
 {
-    return(playerX >= GROUND_LEFT) && (playerX + playerW <= GROUND_RIGHT);
+    if (playerX<GROUND_LEFT ||
+        playerX + playerW>GROUND_RIGHT)
+    {
+        return false;
+    }
+    return playerY >= GROUND_Y;
+   
 }

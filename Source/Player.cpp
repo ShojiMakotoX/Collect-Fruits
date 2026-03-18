@@ -3,6 +3,11 @@
 #include "Stage.h"
 #include "../Library/Time.h"
 
+/// <summary>
+/// M.Shoji
+/// プレイヤーの操作についての管理はここ
+/// </summary>
+
 Player::Player()
 {
     Initialize();
@@ -21,9 +26,6 @@ void Player::Initialize()
     
     speed = 300.0f;
 
-    StageLeft = 250;
-    StageRight = 1050;
-
 }
 
 void Player::Update(const Stage& stage)
@@ -40,14 +42,15 @@ void Player::Update(const Stage& stage)
     }
     
     PlayerX += static_cast<int>(moveX * speed * Time::DeltaTime());
-
-    if (PlayerX <StageLeft)
+    
+    //左右の壁の当たり判定を調整中
+    if (PlayerX <stage.GetLeft())
     {
-        PlayerX = StageLeft;
+        PlayerX = static_cast<float>(stage.GetLeft());
     }
-    if (PlayerX + PlayerW > StageRight)
+    if (PlayerX + PlayerW > stage.GetRight())
     {
-        PlayerX = StageRight - PlayerW;
+        PlayerX = static_cast<float>(stage.GetRight()-PlayerW);
     }
 
 }
